@@ -6,6 +6,8 @@ use Orm\Zed\Antelope\Persistence\PyzAntelopeQuery;
 use Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface;
 use Spryker\Zed\DataImport\Business\Model\DataImportStep\PublishAwareStep;
 use Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface;
+use Pyz\Zed\Antelope\Dependency\AntelopeEvents;
+
 
 class AntelopeWriterStep extends PublishAwareStep implements DataImportStepInterface
 {
@@ -30,5 +32,7 @@ $antelopeEntity->setColor($dataSet[static::KEY_COLOR]);
         if ($antelopeEntity->isNew() || $antelopeEntity->isModified()) {
 $antelopeEntity->save();
         }
+
+        $this->addPublishEvents(AntelopeEvents::ENTITY_PYZ_ANTELOPE_CREATE, $antelopeEntity->getIdAntelope());
     }
 }
