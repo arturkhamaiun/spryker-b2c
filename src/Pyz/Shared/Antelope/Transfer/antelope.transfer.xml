@@ -9,4 +9,9 @@ xsi:schemaLocation="spryker:transfer-01 http://static.spryker.com/transfer-01.xs
 <property name="color" type="string" />
 </transfer>
 
+<transfer name="RestAntelopesAttributes">
+<property name="name" type="string"/>
+<property name="color" type="string"/>
+</transfer>
+
 </transfers>
