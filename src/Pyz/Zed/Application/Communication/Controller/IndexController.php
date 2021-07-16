@@ -6,11 +6,4 @@ use Spryker\Zed\Application\Communication\Controller\IndexController as SprykerI
 
 class IndexController extends SprykerIndexController
 {
-   /**
-    * @return string
-    */
-   public function indexAction()
-   {
-       return 'Hello DE Store!';
-   }
 }
